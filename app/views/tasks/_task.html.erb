@@ -1,0 +1,34 @@
+<%= content_tag_for :li, task do %>
+    <div class="task_">
+      <div class="task_checkbox" >
+        <%= check_box_tag 'name', 'value', task.done, class: 'checkbox' %>
+      </div>
+
+      <div class="task_name">
+        <% if task.done %>
+            <span class="task_entered_name" id="task_title_<%= task.id %>" style="text-decoration:line-through"><%= task.title %></span>
+        <% else %>
+            <span class="task_entered_name" id="task_title_<%= task.id %>" style="text-decoration:none"><%= task.title %></span>
+        <% end %>
+        <span class="task_deadline_date" id="date_<%= task.id %>">deadline <%= task.date %></span>
+      </div>
+
+      <div class="task_img">
+        <%= image_tag("list_arrow.png", class: "list_arrow") %>
+        <%= image_tag("list_line.png", class: "line_list_img") %>
+        <%= image_tag("list_pen.png", class: "edit_list_img") %>
+        <%= image_tag("list_line.png", class: "line_list_img") %>
+        <%= link_to image_tag("list_trash.png", class: "trash_list_img"), [task.project, task], remote: true, method: :delete  %>
+      </div>
+    </div>
+
+    <div class="task_update">
+      <%= form_for [task.project, task], remote: true, method: :patch do |f|  %>
+        <%= f.hidden_field :done %>
+        <%= f.text_field :title %>
+        <%= f.date_field :date %>
+        <%= f.submit 'Update', class: "update_project_button" %>
+        <button class="cancel_update_project_button">Cancel</button>
+      <% end %>
+    </div>
+<% end %>

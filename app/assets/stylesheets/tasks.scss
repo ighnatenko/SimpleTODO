@@ -1,3 +1,71 @@
-// Place all the styles related to the Tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.task_name {
+    display: inline-block;
+    width: 537px;
+    padding: 15px 0px 15px 10px;
+    line-height: 18px;
+    border-left: 3px double #efdadf;
+    border-right: 1px solid #e7ebea;
+}
+
+.task_entered_name {
+    display: inline-block;
+    word-wrap: break-word;
+    width: 370px;
+    line-height: 14px;
+    text-align: justify;
+}
+
+.task_deadline_name {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 14px;
+    color: #416CA7;
+    margin-top: 2px;
+    margin-left: 15px;
+}
+
+.task_deadline_date {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 14px;
+    margin-top: 2px;
+}
+
+input#task_title.task_title_update {
+    width: 325px;
+    margin-left: 10px;
+}
+
+.task_checkbox {
+    display: inline-block;
+    width: 48px;
+    vertical-align: top;
+}
+
+.task_update {
+    background-color: #730E15;
+    display: none;
+    height: 48px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li:hover {
+    background: #FCFED5;
+}
+
+.task_img {
+    width: 72px;
+    vertical-align: top;
+    margin: 14px 8px 0 0;
+    float: right;
+}
+
+.checkbox {
+    margin-top: 20px;
+    margin-left: 20px;
+}

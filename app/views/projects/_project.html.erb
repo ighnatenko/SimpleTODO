@@ -1,0 +1,33 @@
+<div class="project" id="<%= project.id %>">
+    <div class="project_title">
+        <%= image_tag("note.gif", class: "note_list_img") %>
+        <span class="title" id="title<%= project.id %>">
+        <%= project.title %>
+    </span>
+        <%= link_to image_tag("title_trash.gif", class: "title_trash_list_img"), project_path(project), remote: true, method: :delete %>
+        <%= image_tag("title_pen.gif", class: "title_edit") %>
+    </div>
+
+    <div class="project_title_editing">
+        <%= image_tag("note.gif", class: "note_list_img") %>
+        <%= form_for project, remote: true, method: :patch do |f| %>
+        <%= f.text_field :title %>
+        <%= f.submit 'Update', class: "update_project_button" %>
+        <button class="cancel_update_project_button">Cancel</button>
+        <% end %>
+    </div>
+
+    <div class="add_task">
+        <%= image_tag("plus.gif", class: "plus_img") %>
+        <%= form_for [project, Task.new(done: false)], remote: true do |f| %>
+        <%= f.hidden_field :done %>
+        <%= f.text_field :title, :placeholder => "Start typing here to create a task...", class: "new_task_#{ project.id }" %>
+        <%= f.date_field :date %>
+        <%= f.submit "Add Task", class: "add_task_button" %>
+        <% end %>
+    </div>
+
+    <ul class="tasks_ul" update-url-data="<%= sort_project_tasks_path(project.id) %>">
+        <%= render project.tasks.order("position") %>
+    </ul>
+</div>

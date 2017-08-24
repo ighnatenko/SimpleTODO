@@ -5,7 +5,8 @@ class CreateTasks < ActiveRecord::Migration[5.1]
       t.boolean :done
       t.integer :position
       t.integer :project_id
-
+      t.date :date
+      
       t.timestamps
     end
   end

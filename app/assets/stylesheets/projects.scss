@@ -1,3 +1,149 @@
-// Place all the styles related to the Projects controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+    background: linear-gradient(to top, #DEC01C, #F8F3F3) no-repeat center center fixed;
+}
+
+h2 {
+    text-align: center;
+    font-family: "Arial Rounded MT Bold";
+    margin-bottom: 0px;
+    padding-top: 20px;
+}
+
+h4 {
+    text-align: center;
+    margin-top: 0px;
+    padding-bottom: 25px;
+    font-family: autoproject;
+}
+
+.project {
+    width: 700px;
+    padding: 0px;
+    margin: auto;
+    background: #FFF;
+    margin-top: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+.project_title {
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to top left, #3B609D, #5087BC);
+    display: block;
+}
+
+.note_list_img {
+    float: left;
+    margin: 13px 12px 13px 16px;
+}
+
+.title_trash_list_img {
+    float: right;
+    margin: 16px 19px 16px 10px;
+    padding-left: 10px;
+    border-left: 1px solid #5284BF;
+}
+
+.title_edit {
+    float: right;
+    margin: 16px 0px;
+    cursor: pointer;
+}
+
+span.title {
+    color: white;
+    float: left;
+    width: 550px;
+    height: 50px;
+    line-height: 49px;
+    font-family: "gill sans mt", serif;
+    font-size: 17px
+}
+
+div.add_task {
+    width: 100%;
+    border: 1px solid #C4C1B9;
+    background: linear-gradient(to top, #E1E1E1, #CCCCCC);
+    display: inline-block;
+}
+
+img.plus_img {
+    float: left;
+    margin: 12px 14px 12px 16px;
+}
+
+input#project_title {
+    height: 26px;
+    width: 380px;
+    margin: 8px 0px 8px 0px;
+    padding-left: 10px;
+    font-family: "gill sans mt", serif;
+    font-size: 14px;
+}
+
+.project_title_editing {
+    width: 700px;
+    height: 50px;
+    background: linear-gradient(to top left, #3B609D, #5087BC);
+    display: none;
+}
+
+input#task_title {
+    height: 30px;
+    width: 400px;
+    margin: 8px 0px 0px 0px;
+    padding-left: 10px;
+    font-family: "gill sans mt", serif;
+    font-size: 14px;
+}
+
+input#task_date {
+    height: 30px;
+    width: 135px;
+    margin-left: -5px;
+    padding-left: 8px;
+    font-family: "gill sans mt", serif;
+    font-size: 14px;
+}
+
+.add_task_button {
+    display: inline-block;
+    background: linear-gradient(to top, #94CBAE, #508767);
+    height: 30px;
+    width: 90px;
+    padding: 0;
+    margin-left: -5px;
+    text-decoration: none;
+    border-radius: 0 10px 10px 0;
+    font-family: "gill sans mt", serif;
+    font-size: 14px;
+    color: white;
+    border: 0px;
+}
+
+.btn {
+    display: block;
+    margin: 50px auto;
+}
+
+.new_project_area {
+    height: 150px;
+}
+
+.task_entered_name {
+    display: inline-block;
+    word-wrap: break-word;
+    width: 320px;
+    line-height: 14px;
+    text-align: justify;
+}
+
+.task_deadline_date {
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 14px;
+    color: #416CA7;
+    margin-left: 15px;
+    margin-top: 2px;
+}

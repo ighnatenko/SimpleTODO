@@ -1,0 +1,12 @@
+$("#<%= @project.id %>").find("#task_title_<%= @task.id %>").text("<%= @task.title %>");
+
+$("#<%= @project.id %>").find("#task_<%= @task.id %>").find(".task_update").css('display', 'none');
+$("#<%= @project.id %>").find("#task_<%= @task.id %>").find(".task_").css('display', 'block');
+
+$("#<%= @project.id %>").find("#date_<%= @task.id %>").text("deadline <%= @task.date %>");
+
+<% if @task.done %>
+    $("#<%= @project.id %>").find("#task_title_<%= @task.id %>").css('text-decoration', 'line-through');
+<% else %>
+    $("#<%= @project.id %>").find("#task_title_<%= @task.id %>").css('text-decoration', 'none');
+<% end %>

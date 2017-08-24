@@ -1,0 +1,4 @@
+$("#<%= @project.id %>").find(".project_title_editing").css('display', 'none');
+$("#<%= @project.id %>").find(".project_title").css('display', 'block');
+
+$("#<%= @project.id %>").find(".title").text("<%= @project.title %>");
