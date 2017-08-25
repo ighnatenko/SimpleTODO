@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+    before_action :find_projects, only: [:update, :destroy]
+
     def index
         @projects = Project.order(:created_at)
       end
@@ -10,18 +12,20 @@ class ProjectsController < ApplicationController
       end
     
       def update
-        @project = Project.find(params[:id])
         @project.update(project_params)
       end
     
       def destroy
-        @project = Project.find(params[:id])
         @project.destroy
       end
     
       private
-    
-       def project_params
+      
+      def find_projects
+        @project = Project.find(params[:id])  
+      end
+
+      def project_params
         params.require(:project).permit(:title)
       end
 end

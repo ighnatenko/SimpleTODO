@@ -237,14 +237,14 @@
       <pre class="lines">
 
 
-6
-7
 8
 9
-10</pre>
+10
+11
+12</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/projects_controller.rb', line 6</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/projects_controller.rb', line 8</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_project_params'>project_params</span><span class='lbracket'>[</span><span class='symbol'>:title</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_mb_chars'>mb_chars</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>0</span>
@@ -271,16 +271,14 @@
       <pre class="lines">
 
 
-17
 18
 19
 20</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/projects_controller.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/projects_controller.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destroy'>destroy</span>
-  <span class='ivar'>@project</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Project.html" title="Project (class)">Project</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='ivar'>@project</span><span class='period'>.</span><span class='id identifier rubyid_destroy'>destroy</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -303,12 +301,12 @@
       <pre class="lines">
 
 
-2
-3
-4</pre>
+4
+5
+6</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/projects_controller.rb', line 2</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/projects_controller.rb', line 4</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span>
   <span class='ivar'>@projects</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Project.html" title="Project (class)">Project</a></span></span><span class='period'>.</span><span class='id identifier rubyid_order'>order</span><span class='lparen'>(</span><span class='symbol'>:created_at</span><span class='rparen'>)</span>
@@ -333,16 +331,14 @@
       <pre class="lines">
 
 
-12
-13
 14
-15</pre>
+15
+16</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/controllers/projects_controller.rb', line 12</span>
+      <pre class="code"><span class="info file"># File 'app/controllers/projects_controller.rb', line 14</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span>
-  <span class='ivar'>@project</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Project.html" title="Project (class)">Project</a></span></span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='rparen'>)</span>
   <span class='ivar'>@project</span><span class='period'>.</span><span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_project_params'>project_params</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -355,7 +351,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Aug 25 13:48:15 2017 by
+  Generated on Fri Aug 25 23:14:38 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.0).
 </div>
