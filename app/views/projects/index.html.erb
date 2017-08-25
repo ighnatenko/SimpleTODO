@@ -13,7 +13,7 @@
       <div class="modal-body">
         <div class="form-group">
           <%= form_for Project.new, remote: true  do |f|  %>
-            <%= f.text_area :title, placeholder: "Enter new project here..", class: "form-control new_project_area" %>
+            <%= f.text_area :title, placeholder: "Enter new project here..", class: "form-control new_project_area", :required => true %>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <%= f.submit "Save", class: "btn btn-primary"%> 

@@ -11,7 +11,7 @@
     <div class="project_title_editing">
         <%= image_tag("note.gif", class: "note_list_img") %>
         <%= form_for project, remote: true, method: :patch do |f| %>
-        <%= f.text_field :title %>
+        <%= f.text_field :title, :required => true %>
         <%= f.submit 'Update', class: "update_project_button" %>
         <button class="cancel_update_project_button">Cancel</button>
         <% end %>
@@ -21,7 +21,7 @@
         <%= image_tag("plus.gif", class: "plus_img") %>
         <%= form_for [project, Task.new(done: false)], remote: true do |f| %>
         <%= f.hidden_field :done %>
-        <%= f.text_field :title, :placeholder => "Start typing here to create a task...", class: "new_task_#{ project.id }" %>
+        <%= f.text_field :title, :placeholder => "Start typing here to create a task...", class: "new_task_#{ project.id }",  :required => true %>
         <%= f.date_field :date %>
         <%= f.submit "Add Task", class: "add_task_button" %>
         <% end %>
