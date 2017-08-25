@@ -3,7 +3,7 @@ $(document).ready(function() {
         var task_id = $(this).parents("li").attr("id");
 
         $(this).parents("#" + task_id).find(".task_update").css('display', 'block');
-        $(this).parents("#" + task_id).find(".task_").css('display', 'none');
+        $(this).parents("#" + task_id).find(".task_row").css('display', 'none');
 
         return false;
     });
@@ -12,7 +12,7 @@ $(document).ready(function() {
         var task_id = $(this).parents("li").attr("id");
 
         $(this).parents("#" + task_id).find(".task_update").css('display', 'none');
-        $(this).parents("#" + task_id).find(".task_").css('display', 'block');
+        $(this).parents("#" + task_id).find(".task_row").css('display', 'block');
 
         return false;
     });
