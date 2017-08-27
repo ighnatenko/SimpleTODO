@@ -58,11 +58,16 @@ ul li:hover {
     background: #FCFED5;
 }
 
+ul li:hover .task_img {
+    display: inline-block;
+}
+
 .task_img {
     width: 72px;
     vertical-align: top;
     margin: 14px 8px 0 0;
     float: right;
+    display: none;
 }
 
 .checkbox {

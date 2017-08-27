@@ -37,17 +37,19 @@ h4 {
     margin: 13px 12px 13px 16px;
 }
 
-.title_trash_list_img {
+.title_trash {
     float: right;
     margin: 16px 19px 16px 10px;
     padding-left: 10px;
     border-left: 1px solid #5284BF;
+    display: none;
 }
 
 .title_edit {
     float: right;
     margin: 16px 0px;
     cursor: pointer;
+    display: none;
 }
 
 span.title {
@@ -146,4 +148,12 @@ input#task_date {
     color: #416CA7;
     margin-left: 15px;
     margin-top: 2px;
+}
+
+.project_title:hover .title_edit {
+    display: inline-block;
+}
+
+.project_title:hover .title_trash {
+    display: inline-block;
 }

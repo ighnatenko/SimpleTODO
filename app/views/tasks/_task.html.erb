@@ -12,6 +12,8 @@
       <% end %>
       <% if task.date %>
         <span class="task_deadline_date" id="date_<%= task.id %>">deadline <%= task.date %></span>
+      <% else %>
+        <span class="task_deadline_date" id="date_<%= task.id %>"></span>
       <% end %>
     </div>
 
@@ -26,7 +28,7 @@
 
   <div class="task_update">
     <%= form_for [task.project, task], remote: true, method: :patch do |f|  %>
-      <%= f.hidden_field :done %>
+     
       <%= f.text_field :title, :required => true %>
       <%= f.date_field :date %>
       <%= f.submit 'Update', class: "update_project_button" %>
