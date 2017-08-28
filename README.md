@@ -7,7 +7,8 @@
         <li>I want to be able to add tasks to my project</li>
         <li>I want to be able to update/delete tasks</li>
         <li>I want to be able to prioritize tasks into a project</li>
-        <li>I want to be able to choose deadline for my task ★ I want to be able to mark a task as 'done'</li>
+        <li>I want to be able to choose deadline for my task </li>
+        <li>I want to be able to mark a task as 'done'</li>
     </ul>
 
 <h3>Technical requirements</h3>
