@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :find_projects, only: [:create, :destroy, :update]
+  before_action :find_tasks, only: [:destroy, :update]
 
   def create
     @task = @project.tasks.build task_params
@@ -17,12 +18,10 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = @project.tasks.find(params[:id])
     @task.destroy
   end
 
   def update
-    @task = @project.tasks.find(params[:id])
     @task.update(task_params)
   end
 
@@ -34,6 +33,10 @@ class TasksController < ApplicationController
   end
 
   private
+
+  def find_tasks
+    @task = @project.tasks.find(params[:id])
+  end
 
   def find_projects
     @project = Project.find(params[:project_id]) 
