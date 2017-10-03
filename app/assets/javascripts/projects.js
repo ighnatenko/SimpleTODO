@@ -34,6 +34,7 @@ $(document).ready(function() {
     //sorting tasks
     $('.projects').on('mouseenter', '.task', function() {
         $('.tasks_ul').sortable({
+            axis: 'y',
             items: 'li',
             cursor: 'move',
             update: function() {

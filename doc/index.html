@@ -85,19 +85,43 @@
     <li>projects (id, name)</li>
 </ul><h3>Write the queries for:</h3>
 <pre class="code ruby"><code class="ruby">&lt;ul&gt;
-    &lt;li&gt;get all statuses, not repeating, alphabetically ordered&lt;/li&gt;
-    &lt;li&gt; get the count of all tasks in each project, order by tasks count descending&lt;/li&gt;
-    &lt;li&gt; get the count of all tasks in each project, order by projects names&lt;/li&gt;
-    &lt;li&gt;get the tasks for all projects having the name beginning with “N” letter&lt;/li&gt;
-    &lt;li&gt;get the list of all projects containing the ‘a’ letter in the middle of the name, and show the tasks count near each project. Mention that there can exist projects without tasks and tasks with project_id=NULL &lt;/li&gt;
-    &lt;li&gt; get the list of tasks with duplicate names. Order alphabetically&lt;/li&gt;
-    &lt;li&gt;get the list of tasks having several exact matches of both name and status, from the project ‘Garage’. Order by matches count&lt;/li&gt;
-    &lt;li&gt;get the list of project names having more than 10 tasks in status ‘completed’. Order by project_id&lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;get all statuses, not repeating, alphabetically ordered&lt;/p&gt;
+        &lt;h3&gt;SELECT DISTINCT status FROM tasks ORDER BY status ASC&lt;/h3&gt;
+    &lt;/li&gt;
+    &lt;li&gt; 
+        &lt;p&gt;get the count of all tasks in each project, order by tasks count descending&lt;/p&gt;
+        &lt;h3&gt;SELECT COUNT(*) FROM tasks GROUP BY project_id ORDER BY COUNT(*) DESC&lt;/h3&gt;
+    &lt;/li&gt;
+    &lt;li&gt; 
+        &lt;p&gt;get the count of all tasks in each project, order by projects names&lt;/p&gt;
+        &lt;h3&gt;SELECT projects.name, COUNT(tasks.*)tasks FROM projects, tasks WHERE projects.projects_id = tasks.project_id GROUP BY projects.name ORDER BY projects.name&lt;/h3&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;get the tasks for all projects having the name beginning with “N” letter&lt;/p&gt;
+        &lt;h3&gt;SELECT * FROM tasks WHERE name LIKE &#39;N%&#39;&lt;/h3&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;get the list of all projects containing the ‘a’ letter in the middle of the name, and show the tasks count near each project. Mention that there can exist projects without tasks and tasks with project_id=NULL&lt;/p&gt;
+        &lt;h3&gt;SELECT projects.name, COUNT(tasks.tasks_id) FROM projects, tasks WHERE projects.name LIKE &#39;%a%&#39; AND projects.projects_id = tasks.project_id GROUP BY projects.name&lt;/h3&gt;
+    &lt;/li&gt;
+    &lt;li&gt; 
+        &lt;p&gt;get the list of tasks with duplicate names. Order alphabetically&lt;/p&gt;
+        &lt;h3&gt;SELECT * FROM tasks WHERE name IN (SELECT name FROM tasks GROUP BY name HAVING COUNT(name)&gt;1 ) ORDER BY name ASC&lt;/h3&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;get the list of tasks having several exact matches of both name and status, from the project ‘Garage’. Order by matches count&lt;/p&gt;
+        &lt;h3&gt;SELECT tasks.* FROM tasks, projects WHERE projects.name = &quot;Garage&quot; AND projects.projects_id = tasks.project_id GROUP BY tasks.name HAVING COUNT(tasks.name) &gt; 1 AND COUNT(tasks.status) &gt; 1 ORDER BY COUNT(tasks.name) AND COUNT(tasks.status)&lt;/h3&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;get the list of project names having more than 10 tasks in status ‘completed’. Order by project_id&lt;/p&gt;
+        &lt;h3&gt;SELECT name FROM (SELECT projects.name, count(tasks.*) FROM projects, tasks WHERE tasks.status = &#39;completed&#39; AND projects.projects_id = tasks.project_id GROUP BY projects.name) as count WHERE tasks &gt; 10&lt;/h3&gt;
+    &lt;/li&gt;
 &lt;/ul&gt;</code></pre>
 </div></div>
 
       <div id="footer">
-  Generated on Wed Aug 30 20:50:47 2017 by
+  Generated on Tue Oct  3 15:19:36 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.0).
 </div>
