@@ -29,3 +29,8 @@ module SimpleTODO
     config.generators.system_tests = nil
   end
 end
+
+Dotenv::Railtie.load
+
+HOSTNAME = ENV['HOSTNAME']
+
