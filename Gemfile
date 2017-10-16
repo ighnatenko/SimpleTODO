@@ -57,3 +57,4 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'rails-controller-testing'
 gem 'devise'
+gem "react-rails"
